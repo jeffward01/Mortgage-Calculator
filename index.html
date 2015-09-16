@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mortgage Calculator</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <!-- Latest compiled and minified JavaScript -->
@@ -76,29 +77,48 @@
 
   <br>
   <br>
-  <div id="output">
-    <label> Total Cost of Mortgage:
-    </label>
-    <div id="mortOut">
-    </div>
-    <br>
-    <br>
-    <div id="output">
-      <label> Interest Rate %:
-      </label>
-      <div id="intOut">
+  <div id="results-container" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="panel panel-success text-center">
+            <div class="panel-heading">
+              <h3 class="panel-title">Results</h3>
+            </div>
+            <div class="panel-body">
+              <div id="output">
+                <label> Total Cost of Mortgage:
+                </label>
+                <div id="mortOut">
+                </div>
+                <br>
+                <br>
+                <div id="output">
+                  <label> Interest Rate %:
+                  </label>
+                  <div id="intOut">
+                  </div>
+                  <br>
+                  <br>
+                  <label>Monthly Payments:</label>
+                  <div id="monthPayments">
+                  </div>
+                  <fieldset>
+                    <button class="btn-success" type="button" id="resetBtn">Reset</button>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <br>
-      <br>
-      <label>Monthly Payments:</label>
-      <div id="monthPayments">
-      </div>
-
     </div>
-
-    <script src="js/script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="js/pageFlow.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
