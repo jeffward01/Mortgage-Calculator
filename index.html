@@ -21,34 +21,34 @@
 </header>
 
 <body>
-  <div class="container"></div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <div class="panel panel-primary text-center">
-          <div class="panel-heading">
-            <h3 class="panel-title">Mortgage Calculator</h3>
-          </div>
-          <div class="panel-body">
-            <form name="mortCalc" class="form-group">
-              <fieldset>
+  <div id="calcCon" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="panel panel-primary text-center">
+            <div class="panel-heading">
+              <h3 class="panel-title">Mortgage Calculator</h3>
+            </div>
+            <div class="panel-body">
+              <form name="mortCalc" class="form-group">
+                <fieldset>
 
-                <label>Enter Mortgage Amount ($):
-                  <input type="text" id="mAmount" placeholder="Mortgage Amount" />
-                </label>
-                <br>
-                <br>
-                <label>Enter Interest Rate (%):
-                  <input type="text" id="intRate" placeholder="Interest Rate" />
-                </label>
-                <br>
-                <br>
-                <label>Enter Mortage Period (years):
-                  <input type="text" id="mPeriod" placeholder="Mortgage Period" />
-                </label>
-              </fieldset>
-              <!--
+                  <label>Enter Mortgage Amount ($):
+                    <input type="text" id="mAmount" placeholder="Mortgage Amount" />
+                  </label>
+                  <br>
+                  <br>
+                  <label>Enter Interest Rate (%):
+                    <input type="text" id="intRate" placeholder="Interest Rate" />
+                  </label>
+                  <br>
+                  <br>
+                  <label>Enter Mortage Period (years):
+                    <input type="text" id="mPeriod" placeholder="Mortgage Period" />
+                  </label>
+                </fieldset>
+                <!--
     <fieldset>
       <label>Compounding Interest Interval:
         <br>
@@ -65,10 +65,11 @@
       </label>
     </fieldset>
 -->
-              <fieldset>
-                <button class="btn-primary" type="button" onclick="test()" id="calculateBtn">Calculate</button>
-              </fieldset>
-            </form>
+                <fieldset>
+                  <button class="btn-primary" type="button" onclick="test()" id="calculateBtn">Calculate</button>
+                </fieldset>
+              </form>
+            </div>
           </div>
         </div>
       </div>

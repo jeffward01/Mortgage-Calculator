@@ -7,8 +7,7 @@ var months = years * 12;
 //calc.addEventListener('click', populate);
 
 //Test JS to see if loaded properly
-alert("JS Works!");
-
+//alert("JS Works!");
 
 
 //Functions
@@ -41,15 +40,18 @@ function test() {
   M = monthlyPayment(P, N, I);
   parseInt(M);
   Math.floor(M);
-  alert("Your monthly Payment is: " + M);
+  //  alert("Your monthly Payment is: " + M);
   var ans = formatMoney(M);
-  alert("Your Answer is: " + ans);
+  //  alert("Your Answer is: " + ans);
   document.getElementById('monthPayments').innerHTML = N + " monthly payments of " + ans;
 
 }
 //Calculate Monthly Payment
 function monthlyPayment(p, n, i) {
-  return p * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+  var longAnswer;
+  longAnswer = p * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+  longAnswer = longAnswer.toFixed(2);
+  return longAnswer;
 }
 
 function populateMortgage() {
@@ -104,7 +106,7 @@ function logger(x) {
   };
 }
 
-function formatMoney(x){
+function formatMoney(x) {
   var num = x.toString();
   var num1 = "$" + num;
   return num1;
