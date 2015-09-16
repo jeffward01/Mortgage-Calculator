@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mortgage Calculator</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<header>
+  <div class="page-header text-center">
+    <h1>Mortgage Calculator</h1>
+    <h2>By: Jeff Ward</h2>
+  </div>
+</header>
+
+<body>
+  <div class="container"></div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="panel panel-primary text-center">
+          <div class="panel-heading">
+            <h3 class="panel-title">Mortgage Calculator</h3>
+          </div>
+          <div class="panel-body">
+            <form name="mortCalc" class="form-group">
+              <fieldset>
+
+                <label>Enter Mortgage Amount:
+                  <input type="text" id="mAmount" placeholder="Mortgage Amount" />
+                </label>
+                <br>
+                <br>
+                <label>Enter Interest Rate (%):
+                  <input type="text" id="intRate" placeholder="Interest Rate" />
+                </label>
+                <br>
+                <br>
+                <label>Enter Mortage Period (years):
+                  <input type="text" id="mPeriod" placeholder="Mortgage Period" />
+                </label>
+              </fieldset>
+              <!--
+    <fieldset>
+      <label>Compounding Interest Interval:
+        <br>
+        <input type="radio" name="interestInterval" value="none" checked>None
+        <br>
+        <input type="radio" name="interestInterval" value="monthy">Monthly
+        <br>
+        <input type="radio" name="interestInterval" value="weekly">Weekly
+        <br>
+        <input type="radio" name="interestInterval" value="daily">Daily
+        <br>
+        <input type="radio" name="interestInterval" value="continually">Continually
+        <br>
+      </label>
+    </fieldset>
+-->
+              <fieldset>
+                <button class="btn-primary" type="button" onclick="test()" id="calculateBtn">Calculate</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <div id="output">
+    <label> Total Cost of Mortgage:
+    </label>
+    <div id="mortOut">
+    </div>
+    <br>
+    <br>
+    <div id="output">
+      <label> Interest Rate %:
+      </label>
+      <div id="intOut">
+      </div>
+      <br>
+      <br>
+      <label>Monthly Payments:</label>
+      <div id="monthPayments">
+      </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </div>
+</body>
+
+</html>

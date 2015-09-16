@@ -1,0 +1,1 @@
+Add jQuery to calculator and more fun functions
