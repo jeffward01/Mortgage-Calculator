@@ -43,7 +43,7 @@ function test() {
   //  alert("Your monthly Payment is: " + M);
   var ans = formatMoney(M);
   //  alert("Your Answer is: " + ans);
-  document.getElementById('monthPayments').innerHTML = N + " monthly payments of " + ans;
+  document.getElementById('monthPayments').innerHTML = years + " years of payments" + '<br>' + N + " monthly payments of " + ans;
 }
 
 //Calculate Monthly Payment
