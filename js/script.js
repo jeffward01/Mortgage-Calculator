@@ -118,3 +118,5 @@ function formatMoney(x) {
   num = "$" + num;
   return num;
 }
+//Notes:
+//Add a float to the answer || Currently it appears like:  218,94 instead of 218.94
