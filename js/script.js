@@ -44,8 +44,8 @@ function test() {
   var ans = formatMoney(M);
   //  alert("Your Answer is: " + ans);
   document.getElementById('monthPayments').innerHTML = N + " monthly payments of " + ans;
-
 }
+
 //Calculate Monthly Payment
 function monthlyPayment(p, n, i) {
   var longAnswer;
@@ -54,6 +54,7 @@ function monthlyPayment(p, n, i) {
   return longAnswer;
 }
 
+//Populate Mortgage $XX,XXX output
 function populateMortgage() {
   var totalMort = document.getElementById('mAmount').value;
   var num = totalMort;
@@ -61,14 +62,17 @@ function populateMortgage() {
   if (num.isNaN()) {
     alert("Please enter a valid Number for Mortgage amount.");
   } else {
-    document.getElementById('mortOut').innerHTML = totalMort;
+    num = formatMoney(num);
+    document.getElementById('mortOut').innerHTML = num;
   }
 }
 
+//Populate Interest Rate Output
 function populateIntRate() {
   var intRate = document.getElementById('intRate').value;
-  var num = intRate;
-  checkIfNum(num);
+  intRate = intRate.replace(/\$%|\,/g, '');
+  checkIfNum(intRate);
+  intRate = intRate + "%";
   document.getElementById('intOut').innerHTML = intRate;
 }
 
