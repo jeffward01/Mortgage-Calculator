@@ -70,7 +70,7 @@ function populateMortgage() {
 //Populate Interest Rate Output
 function populateIntRate() {
   var intRate = document.getElementById('intRate').value;
-  intRate = intRate.replace(/\$%|\,/g, '');
+  intRate = intRate.replace(/[^\d.-]/g, '');
   checkIfNum(intRate);
   intRate = intRate + "%";
   document.getElementById('intOut').innerHTML = intRate;
@@ -111,7 +111,10 @@ function logger(x) {
 }
 
 function formatMoney(x) {
-  var num = x.toString();
-  var num1 = "$" + num;
-  return num1;
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  parts.join(".");
+  var num = parts.toString();
+  num = "$" + num;
+  return num;
 }
