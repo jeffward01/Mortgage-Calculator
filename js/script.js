@@ -43,6 +43,7 @@ function test() {
   //  alert("Your monthly Payment is: " + M);
   var ans = formatMoney(M);
   //  alert("Your Answer is: " + ans);
+  //remove , from ans after format and replace with .
   document.getElementById('monthPayments').innerHTML = years + " years of payments" + '<br>' + N + " monthly payments of " + ans;
 }
 
