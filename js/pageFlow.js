@@ -16,15 +16,15 @@ $(document).ready(function () {
 
   //reveal results container
   $("#calculateBtn").click(function () {
-    //valifation not working for some reason....
-//    if ($('#mAmount').val('') || $('#mPeriod').val('') || $('#intRate').val('')) {
-//      alert("Fill in the inputs before Calculating!!");
-//    } else {
+    //validation not working for some reason....
+    if ($('#mAmount').val() == '' || $('#mPeriod').val() == '' || $('#intRate').val() == '') {
+      alert("Fill in all inputs before Calculating!!");
+    } else {
 
       $("#results-container").show("slow", function () {
         // Animation complete.
       });
-//    }
+    }
   });
 
 
