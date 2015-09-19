@@ -33,13 +33,15 @@ $(document).ready(function () {
     $("#results-container").hide("slow", function () {
       // Animation complete.
     });
+    //Enable Button
+    var button = document.getElementById('calculateBtn');
+    toggleDisableButton(button);
     //Reset input to blank
     $('#mAmount').val('');
     $('#mPeriod').val('');
     $('#intRate').val('');
-    //Enable Button
-    var button = document.getElementById('calculateBtn');
-    enableButton(button);
+
+
 
   });
 
@@ -47,11 +49,9 @@ $(document).ready(function () {
   //Button Handler (Prevents Double Submission without clicking the 'reset' button)
   $('#calculateBtn').on('click', function () {
     var button = document.getElementById('calculateBtn');
-    disableButton(button);
+    toggleDisableButton(button);
     //toggleText not working for some reason...
     toggleText(button);
-
-
   }); //End on click
 
 
@@ -59,11 +59,17 @@ $(document).ready(function () {
 }); //End Ready
 
 
-function disableButton(button) {
+function toggleDisableButton(button) {
+  //Check to ensure values are entered (prevent pre-mature disabling of button)
   if ($('#mAmount').val() == '' || $('#mPeriod').val() == '' || $('#intRate').val() == '') {
     return null;
   }
-  button.disabled = true;
+  //Toggle Button Disabled
+  if (button.disabled === false) {
+    button.disabled = true;
+  } else if (button.disabled === true) {
+    button.disabled = false;
+  }
 }
 
 function enableButton(button) {
