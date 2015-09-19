@@ -48,23 +48,25 @@
                     <input type="text" class="inputField" id="mPeriod" placeholder="Mortgage Period" />
                   </label>
                 </fieldset>
-                <!--
-    <fieldset>
-      <label>Compounding Interest Interval:
-        <br>
-        <input type="radio" name="interestInterval" value="none" checked>None
-        <br>
-        <input type="radio" name="interestInterval" value="monthy">Monthly
-        <br>
-        <input type="radio" name="interestInterval" value="weekly">Weekly
-        <br>
-        <input type="radio" name="interestInterval" value="daily">Daily
-        <br>
-        <input type="radio" name="interestInterval" value="continually">Continually
-        <br>
-      </label>
-    </fieldset>
--->
+                <br>
+                <div id="form-break"></div>
+                <br>
+                <fieldset>
+                  <div class="form-inline">
+                    <div class="controls-row">
+
+                      <label>Compounding Interest Interval:
+                        <br>
+                        <input type="radio" name="interestInterval" id="radioNone" value="none" checked>None
+                        <input type="radio" name="interestInterval" id="radioDaily" value="daily">Daily
+                        <input type="radio" name="interestInterval" id="radioWeekly" value="weekly">Weekly
+                        <input type="radio" name="interestInterval" id="radioMonthly" value="monthy">Monthly
+                        <input type="radio" name="interestInterval" id="radioContinually" value="continually">Continually
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
                 <fieldset>
                   <button class="btn btn-primary" type="button" id="calculateBtn">Calculate</button>
                 </fieldset>

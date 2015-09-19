@@ -35,3 +35,17 @@ textarea:focus {
   -webkit-border-radius: 10px;
   margin-top: 10px;
 }
+
+/*Form Break div line*/
+
+#form-break {
+  margin: 0 auto;
+  width: 60%;
+  border-top: 1px dotted gray;
+}
+
+/*Radio Buttons Styling*/
+
+input[type=radio] {
+  margin-left: 1em;
+}
