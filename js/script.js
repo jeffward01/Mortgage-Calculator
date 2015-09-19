@@ -11,6 +11,8 @@ var months = years * 12;
 
 
 //Functions
+$('#calculateBtn').on('click', test);
+
 function test() {
   //Test to see if numbers are 'numbers'
   //Populate Page
@@ -117,9 +119,9 @@ function formatMoney(x) {
   parts.join(".");
   var num = parts.toString();
   //Set decimal point If number is 5 digit number (XXX.XX)
-//  if (num.length === 6) {
-   //    num = num.replace(",", ".");
-   //  }
+  //  if (num.length === 6) {
+  //    num = num.replace(",", ".");
+  //  }
   //Set last decimal point if number is greater than a 5 digit number (X,XXX.XX)
   num = "$" + num;
   return num;
@@ -131,7 +133,7 @@ function formatMoneyPayment(x) {
   parts.join(".");
   var num = parts.toString();
   //Set decimal point If number is 5 digit number (XXX.XX)
-  if (num.length === 6) {
+  if (num.length <= 6) {
     num = num.replace(",", ".");
   }
   //Set last decimal point if number is greater than a 5 digit number (X,XXX.XX)

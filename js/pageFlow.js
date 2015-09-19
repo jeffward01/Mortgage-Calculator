@@ -37,6 +37,40 @@ $(document).ready(function () {
     $('#mAmount').val('');
     $('#mPeriod').val('');
     $('#intRate').val('');
+    //Enable Button
+    var button = document.getElementById('calculateBtn');
+    enableButton(button);
+
   });
 
+
+  //Button Handler (Prevents Double Submission without clicking the 'reset' button)
+  $('#calculateBtn').on('click', function () {
+    var button = document.getElementById('calculateBtn');
+    disableButton(button);
+    //toggleText not working for some reason...
+    toggleText(button);
+
+
+  }); //End on click
+
+
+
 }); //End Ready
+
+
+function disableButton(button) {
+  if ($('#mAmount').val() == '' || $('#mPeriod').val() == '' || $('#intRate').val() == '') {
+    return null;
+  }
+  button.disabled = true;
+}
+
+function enableButton(button) {
+  button.disabled = false;
+}
+
+//Not working for some reason...
+function toggleText(button_id) {
+  document.getElementById(button_id).childNodes[0].nodeValue = 'Lock';
+}
