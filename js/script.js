@@ -41,7 +41,7 @@ function test() {
   parseInt(M);
   Math.floor(M);
   //  alert("Your monthly Payment is: " + M);
-  var ans = formatMoney(M);
+  var ans = formatMoneyPayment(M);
   //  alert("Your Answer is: " + ans);
   //remove , from ans after format and replace with .
   document.getElementById('monthPayments').innerHTML = years + " years of payments" + '<br>' + N + " monthly payments of " + ans;
@@ -116,9 +116,38 @@ function formatMoney(x) {
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   parts.join(".");
   var num = parts.toString();
+  //Set decimal point If number is 5 digit number (XXX.XX)
+//  if (num.length === 6) {
+   //    num = num.replace(",", ".");
+   //  }
+  //Set last decimal point if number is greater than a 5 digit number (X,XXX.XX)
   num = "$" + num;
   return num;
 }
+
+function formatMoneyPayment(x) {
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  parts.join(".");
+  var num = parts.toString();
+  //Set decimal point If number is 5 digit number (XXX.XX)
+  if (num.length === 6) {
+    num = num.replace(",", ".");
+  }
+  //Set last decimal point if number is greater than a 5 digit number (X,XXX.XX)
+  if (num.length > 6) {
+    var str = num,
+      replacement = '.';
+    str = str.replace(/,([^,]*)$/, replacement + '$1');
+    num = str;
+  }
+  num = "$" + num;
+  return num;
+}
+
+
+
+
 
 //Notes:
 //Add a float to the answer || Currently it appears like:  218,94 instead of 218.94
