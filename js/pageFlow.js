@@ -72,10 +72,6 @@ function toggleDisableButton(button) {
   }
 }
 
-function enableButton(button) {
-  button.disabled = false;
-}
-
 //Not working for some reason...
 function toggleText(button_id) {
   document.getElementById(button_id).childNodes[0].nodeValue = 'Lock';
