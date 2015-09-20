@@ -195,4 +195,6 @@ function formatMoneyPayment(x) {
 
 
 //Notes:
-//Add a float to the answer || Currently it appears like:  218,94 instead of 218.94
+// add % to end of percentage (add a delay)
+//Add a $ to beginning of Mortgage Principle input box while typing
+//Fix Math for radio buttons
