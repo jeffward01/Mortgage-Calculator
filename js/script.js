@@ -4,21 +4,31 @@ var mortgageAmountOutput = logger('mAmount');
 var calc = getById('calculateBtn');
 var years = +document.getElementById('mPeriod').value;
 var months = years * 12;
-//calc.addEventListener('click', populate);
 
-//Test JS to see if loaded properly
-//alert("JS Works!");
 
+
+
+
+
+
+//Event Listeners
+$('#calculateBtn').on('click', test);
+$("input[name=interestInterval]:radio").change(function () {
+  var intPer = parseInt($('input[name="interestInterval"]:checked').val());
+  var button = document.getElementById('calculateBtn');
+  if (button.disabled === true) {
+
+    test();
+
+  }
+});
 
 //Functions
-$('#calculateBtn').on('click', test);
-
 function test() {
   //Test to see if numbers are 'numbers'
   //Populate Page
   populateMortgage();
   populateIntRate();
-
   //Grab Years and Months
   var years = +document.getElementById('mPeriod').value;
   var months = years * 12;
@@ -31,7 +41,13 @@ function test() {
   totalMort = totalMort.replace(/\$|\,/g, '');
 
 
+  //Grab Radio input/value
+  var intPer = parseInt($('input[name="interestInterval"]:checked').val());
+
+
   //---------Begin Math-----------
+
+
 
   var M; //monthly mortgage payment
   var P = totalMort; //principle / initial amount borrowed
@@ -39,7 +55,7 @@ function test() {
   var N = years * 12; //number of payments months
 
   //monthly mortgage payment
-  M = monthlyPayment(P, N, I);
+  M = monthlyPayment(P, N, I, intPer);
   parseInt(M);
   Math.floor(M);
   //  alert("Your monthly Payment is: " + M);
@@ -50,9 +66,9 @@ function test() {
 }
 
 //Calculate Monthly Payment
-function monthlyPayment(p, n, i) {
+function monthlyPayment(p, n, i, interestInterval) {
   var longAnswer;
-  longAnswer = p * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+  longAnswer = p * i * (Math.pow(1 + i, n * interestInterval)) / (Math.pow(1 + i, n * interestInterval) - 1);
   longAnswer = longAnswer.toFixed(2);
   return longAnswer;
 }
@@ -79,6 +95,33 @@ function populateIntRate() {
   document.getElementById('intOut').innerHTML = intRate;
 }
 
+
+//Populate Principle and add commas while typing
+$('#mAmount').keyup(function (event) {
+  // skip for arrow keys
+  if (event.which >= 37 && event.which <= 40) return;
+
+  // format number
+  $(this).val(function (index, value) {
+    return value
+      .replace(/[^0-9$.]/g, "")
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  });
+});
+
+//add % while typing
+//Need to add delay
+//$('#intRate').keyup(function (event) {
+//  // skip for arrow keys
+//  if (event.which >= 37 && event.which <= 40) return;
+//
+//  // format number
+//  $(this).val(function (index, value) {
+//    return value
+//      .replace(/[^0-9%$.]/g, "")
+//      .replace(/$/g, "%");
+//  });
+//});
 
 function checkIfNum(x) {
   x = x.toString().replace(/\$%|\,/g, '');

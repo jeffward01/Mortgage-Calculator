@@ -49,3 +49,14 @@ textarea:focus {
 input[type=radio] {
   margin-left: 1em;
 }
+
+/*Disclaimer*/
+
+#disclaimer {
+  font-size: 10px;
+  font-style: italic;
+  color: dimgray
+}
+#disclaimer span {
+  text-decoration: underline;
+}

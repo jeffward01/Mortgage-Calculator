@@ -49,7 +49,9 @@
                   </label>
                 </fieldset>
                 <br>
-                <div id="form-break"></div>
+                <div id="form-break">
+                  <p id="disclaimer">Alert: Math currently not working for: <span>Daily</span>, <span>Weekly</span>, <span>Monthly</span>, and <span>Continously</span> Options</p>
+                </div>
                 <br>
                 <fieldset>
                   <div class="form-inline">
@@ -57,11 +59,11 @@
 
                       <label>Compounding Interest Interval:
                         <br>
-                        <input type="radio" name="interestInterval" id="radioNone" value="none" checked>None
-                        <input type="radio" name="interestInterval" id="radioDaily" value="daily">Daily
-                        <input type="radio" name="interestInterval" id="radioWeekly" value="weekly">Weekly
-                        <input type="radio" name="interestInterval" id="radioMonthly" value="monthy">Monthly
-                        <input type="radio" name="interestInterval" id="radioContinually" value="continually">Continually
+                        <input type="radio" name="interestInterval" id="radioNone" value="1" checked>None
+                        <input type="radio" name="interestInterval" id="radioDaily" value="365">Daily
+                        <input type="radio" name="interestInterval" id="radioWeekly" value="52">Weekly
+                        <input type="radio" name="interestInterval" id="radioMonthly" value="12">Monthly
+                        <input type="radio" name="interestInterval" id="radioContinually" value="365">Continually
                       </label>
                     </div>
                   </div>
